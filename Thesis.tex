@@ -3,7 +3,7 @@
 %% ---------------------------------------------------------------- 
 
 % Set up the document
-\documentclass[a4paper, 11pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+\documentclass[a4paper, 11pt, twoside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
 \graphicspath{Figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
 
 % Include any extra LaTeX packages required
@@ -14,105 +14,112 @@
 
 %% ----------------------------------------------------------------
 \begin{document}
+
 \frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
 
 % Set up the Title Page
-\title  {Thesis Title}
-\authors  {\texorpdfstring
-            {\href{your web site or email address}{Author Name}}
-            {Author Name}
-            }
+\title  {Open Source Data Mining Tools for Association Rules and Subgroup Discovery}
+\author  {Javier López Ruiz}    
 \addresses  {\groupname\\\deptname\\\univname}  % Do not change this here, instead these must be set in the "Thesis.cls" file, please look through it instead
 \date       {\today}
 \subject    {}
 \keywords   {}
 
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\makeatother
+
+\begin{center}
+	\Large
+	UNIVERSIDAD DE ALCALÁ
+	
+	Escuela Politécnica Superior
+	\linebreak
+	\linebreak
+	\textbf{GRADO EN INGENIERÍA INFORMÁTICA}
+	\linebreak
+	\linebreak
+	Trabajo Fin de Grado
+	\linebreak
+	\linebreak
+	\textbf{\thetitle}
+	\linebreak
+	\linebreak
+	\textbf{Autor:} \theauthor
+	\linebreak
+	\linebreak
+	Director: Daniel Rodríguez García
+	\linebreak
+\end{center}
+
+\begin{flushleft}
+	\textbf{TRIBUNAL:}
+	\\[2cm]
+	\textbf{Presidente:}
+	\\[2.5cm]
+	\textbf{Vocal 1º:}
+	\\[2.5cm]
+	\textbf{Vocal 2º:}
+	\\[2cm]
+	\textbf{CALIFICACIÓN:} ................................................................
+	\\
+	\textbf{FECHA:}
+	\space\space\space\space\space\space\space\space\space\space\space\space\space\space
+	................................................................
+\end{flushleft}
+
 \maketitle
+
+% The Abstract Page
+
+\chapter{Resumen}
+\bigskip
+Texto
+
+\textbf{Palabras clave:} palabra
+\cleardoublepage  % Abstract ended, start a new page
+
+\chapter{Abstract}
+\bigskip
+Texto
+
+\textbf{Keywords:} word
+\cleardoublepage  % Abstract ended, start a new page
 %% ----------------------------------------------------------------
 
-\setstretch{1.3}  % It is better to have smaller font and larger line spacing than the other way round
 
 % Define the page headers using the FancyHdr package and set up for one-sided printing
 \fancyhead{}  % Clears all page headers and footers
 \rhead{\thepage}  % Sets the right side header to show the page number
 \lhead{}  % Clears the left side page header
+\pagestyle{empty}  % Finally, use the "fancy" page style to implement the FancyHdr headers
 
-\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
-
-%% ----------------------------------------------------------------
-% Declaration Page required for the Thesis, your institution may give you a different text to place here
-\Declaration{
-
-\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-
-I, AUTHOR NAME, declare that this thesis titled, `THESIS TITLE' and the work presented in it are my own. I confirm that:
-
-\begin{itemize} 
-\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
- 
-\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
- 
-\item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
- 
-\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
- 
-\item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
- 
-\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
-\\
-\end{itemize}
- 
- 
-Signed:\\
-\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
- 
-Date:\\
-\rule[1em]{25em}{0.5pt}  % This prints a line to write the date
+% The Acknowledgements page, for thanking everyone
+\acknowledgements{
+	\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+	
+	The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
+	
 }
-\clearpage  % Declaration ended, now start a new page
+\cleardoublepage  % End of the Acknowledgements
+%% --------
 
-%% ----------------------------------------------------------------
 % The "Funny Quote Page"
 \pagestyle{empty}  % No headers or footers for the following pages
-
-\null\vfill
+\null\vfill\begin{flushright}
 % Now comes the "Funny Quote", written in italics
-\textit{``Write a funny quote here.''}
+\textit{``If you torture the data long enough, it will confess.''}
 
-\begin{flushright}
-If the quote is taken from someone, their name goes here
+Ronald Coase
 \end{flushright}
-
 \vfill\vfill\vfill\vfill\vfill\vfill\null
-\clearpage  % Funny Quote page ended, start a new page
-%% ----------------------------------------------------------------
-
-% The Abstract Page
-\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
-\abstract{
-\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-
-The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
-
-}
-
-\clearpage  % Abstract ended, start a new page
+\cleardoublepage  % Funny Quote page ended, start a new page
 %% ----------------------------------------------------------------
 
 \setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
 
-% The Acknowledgements page, for thanking everyone
-\acknowledgements{
-\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-
-The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
-
-}
-\clearpage  % End of the Acknowledgements
-%% ----------------------------------------------------------------
-
 \pagestyle{fancy}  %The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
-
 
 %% ----------------------------------------------------------------
 \lhead{\emph{Contents}}  % Set the left side page header to "Contents"
@@ -134,43 +141,8 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 {
 % \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
 \textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
-
 }
 
-%% ----------------------------------------------------------------
-\clearpage  % Start a new page
-\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
-\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
-{
-% Constant Name & Symbol & = & Constant Value (with units) \\
-Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
-
-}
-
-%% ----------------------------------------------------------------
-\clearpage  %Start a new page
-\lhead{\emph{Symbols}}  % Set the left side page header to "Symbols"
-\listofnomenclature{lll}  % Include a list of Symbols (a three column table)
-{
-% symbol & name & unit \\
-$a$ & distance & m \\
-$P$ & power & W (Js$^{-1}$) \\
-& & \\ % Gap to separate the Roman symbols from the Greek
-$\omega$ & angular frequency & rads$^{-1}$ \\
-}
-%% ----------------------------------------------------------------
-% End of the pre-able, contents and lists of things
-% Begin the Dedication page
-
-\setstretch{1.3}  % Return the line spacing back to 1.3
-
-\pagestyle{empty}  % Page style needs to be empty for this page
-\dedicatory{For/Dedicated to/To my\ldots}
-
-\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
-
-
-%% ----------------------------------------------------------------
 \mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
 \pagestyle{fancy}  % Return the page headers back to the "fancy" style
 
@@ -179,17 +151,23 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \input{Chapters/Chapter1} % Introduction
 
-%\input{Chapters/Chapter2} % Background Theory 
+\input{Chapters/Chapter2} % Weka
 
-%\input{Chapters/Chapter3} % Experimental Setup
+\input{Chapters/Chapter3} % R Environment
 
-%\input{Chapters/Chapter4} % Experiment 1
+\input{Chapters/Chapter4} % Rapidminer
 
-%\input{Chapters/Chapter5} % Experiment 2
+\input{Chapters/Chapter5} % KNIME
 
-%\input{Chapters/Chapter6} % Results and Discussion
+\input{Chapters/Chapter6} % JCLEC
 
-%\input{Chapters/Chapter7} % Conclusion
+\input{Chapters/Chapter7} % Keel
+
+\input{Chapters/Chapter8} % Cortana
+
+\input{Chapters/Chapter9} % Orange
+
+\input{Chapters/Chapter10} % Conclusions & Feature Work
 
 %% ----------------------------------------------------------------
 % Now begin the Appendices, including them as separate files
@@ -198,11 +176,7 @@ $\omega$ & angular frequency & rads$^{-1}$ \\
 
 \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
 
-\input{Appendices/AppendixA}	% Appendix Title
-
-%\input{Appendices/AppendixB} % Appendix Title
-
-%\input{Appendices/AppendixC} % Appendix Title
+\input{Appendices/AppendixA}	% Learning resources
 
 \addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 \backmatter

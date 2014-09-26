@@ -34,13 +34,3 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-
-*.aux
-*.lof
-*.log
-*.lot
-*.out
-*.gz
-*.toc
-*.bbl
-*.blg

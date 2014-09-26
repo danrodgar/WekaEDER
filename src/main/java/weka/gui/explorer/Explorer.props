@@ -35,7 +35,12 @@ Tabs=weka.gui.explorer.ClassifierPanel,\
      weka.gui.explorer.ClustererPanel,\
      weka.gui.explorer.AssociationsPanel,\
      weka.gui.explorer.AttributeSelectionPanel,\
-     weka.gui.explorer.VisualizePanel
+     weka.gui.explorer.VisualizePanel,\
+     weka.gui.explorer.SubgroupDiscoveryPanel
+
+# the default subgroup discovery algorithm in the subgroup discovery tab, including options
+# (default is EDERSD)
+SubgroupDiscovery=weka.subgroupDiscovery.EDERSD
 
 # the initial directory for opening datasets.
 # the following placeholders are recognized

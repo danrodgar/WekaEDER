@@ -117,6 +117,9 @@ public class Instances extends AbstractList<Instance> implements Serializable,
    * @see #readInstance(Reader)
    */
   protected int m_Lines = 0;
+  
+  /** The valur of class attribute's index */
+  protected int m_ValueClassIndex;
 
   /**
    * Reads an ARFF file from a reader, and assigns a weight of one to each
@@ -200,6 +203,8 @@ public class Instances extends AbstractList<Instance> implements Serializable,
 
     // Strings only have to be "shallow" copied because
     // they can't be modified.
+  
+    m_ValueClassIndex = dataset.m_ValueClassIndex;
     m_ClassIndex = dataset.m_ClassIndex;
     m_RelationName = dataset.m_RelationName;
     m_Attributes = dataset.m_Attributes;
@@ -257,6 +262,7 @@ public class Instances extends AbstractList<Instance> implements Serializable,
     }
     names.clear();
 
+    m_ValueClassIndex = 0;
     m_RelationName = name;
     m_ClassIndex = -1;
     m_Attributes = attInfo;
@@ -2365,5 +2371,41 @@ public class Instances extends AbstractList<Instance> implements Serializable,
   @Override
   public String getRevision() {
     return RevisionUtils.extract("$Revision: 10875 $");
+  }
+  
+  /**
+   * Returns the value of class attribute. MHS
+   *
+   * @return the value of class attribute
+   * @throws UnassignedClassException if the class is not set
+   */
+  public/* @pure@ */String valueClassAttribute() {
+
+	  if (m_ClassIndex < 0) {
+		  throw new UnassignedClassException(
+				  "Class index is negative (not set)!");
+	  }
+
+	  return attribute(m_ClassIndex).value(m_ValueClassIndex);
+  }
+  
+  
+  /**
+   * Returns the value of class attribute. MHS
+   *
+   * @return the value of class attribute
+   * @throws UnassignedClassException if the class is not set
+   */
+  public/* @pure@ */int posValueClassAttribute() {
+
+	  return m_ValueClassIndex;
+  }
+  
+  /**
+   * Sets the value index of class attribute. MHS
+   * @param valueIndex
+   */
+  public void setValueClassAttribute(int valueIndex) {	
+	  m_ValueClassIndex=valueIndex;
   }
 }

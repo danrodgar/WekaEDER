@@ -219,3 +219,41 @@ weka.core.PartitionGenerator=\
 # stopword algorithms
 weka.core.stopwords.StopwordsHandler=\
   weka.core.stopwords
+  
+   Lists the Operator Crossover I want to choose from
+ weka.classifiers.rules.hider.operator.crossover.Crossover=\
+ weka.classifiers.rules.hider.operator.crossover
+  
+# Lists the Operator Mutation I want to choose from
+ weka.classifiers.rules.hider.operator.mutation.Mutation=\
+ weka.classifiers.rules.hider.operator.mutation
+ 
+# Lists the Operator Selecion I want to choose from
+ weka.classifiers.rules.hider.operator.selection.Selection=\
+ weka.classifiers.rules.hider.operator.selection
+ 
+# Lists the Operator Fitness I want to choose from
+ weka.classifiers.rules.hider.evaluation.Fitness=\
+ weka.classifiers.rules.hider.evaluation
+ 
+ 
+  # 
+weka.subgroupDiscovery.SubgroupDiscovery=\
+ weka.subgroupDiscovery
+ 
+ 
+ # Lists the Operator Crossover I want to choose from
+ weka.subgroupDiscovery.edersd.operator.crossover.Crossover=\
+ weka.subgroupDiscovery.edersd.operator.crossover
+  
+# Lists the Operator Mutation I want to choose from
+ weka.subgroupDiscovery.edersd.operator.mutation.Mutation=\
+ weka.subgroupDiscovery.edersd.operator.mutation
+ 
+# Lists the Operator Selecion I want to choose from
+ weka.subgroupDiscovery.edersd.operator.selection.Selection=\
+ weka.subgroupDiscovery.edersd.operator.selection
+ 
+# Lists the Operator Fitness I want to choose from
+ weka.subgroupDiscovery.edersd.evaluation.Fitness=\
+ weka.subgroupDiscovery.edersd.evaluation

@@ -241,7 +241,9 @@ weka.classifiers.Classifier=\
  weka.classifiers.rules.PART,\
  weka.classifiers.rules.Prism,\
  weka.classifiers.rules.Ridor,\
- weka.classifiers.rules.ZeroR
+ weka.classifiers.rules.ZeroR,\
+ weka.classifiers.rules.EDERSD,\
+ weka.classifiers.rules.GASUD
 
 # Lists the AbstractOutput classes I want to choose from
 weka.classifiers.evaluation.output.prediction.AbstractOutput=\
@@ -558,3 +560,6 @@ weka.core.stopwords.StopwordsHandler=\
   weka.core.stopwords.RegExpFromFile,\
   weka.core.stopwords.WordsFromFile
  
+  # 
+weka.subgroupDiscovery.SubgroupDiscovery=\
+weka.subgroupDiscovery.EDERSD

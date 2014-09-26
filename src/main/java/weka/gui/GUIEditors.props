@@ -83,3 +83,36 @@ weka.core.PartitionGenerator=weka.gui.GenericObjectEditor
 #generators
 #weka.classifiers.meta.generators.NominalAttributeGenerator=weka.gui.GenericObjectEditor
 #weka.classifiers.meta.generators.NumericAttributeGenerator=weka.gui.GenericObjectEditor
+
+
+# Crossover
+weka.classifiers.rules.hider.operator.crossover.Crossover=weka.gui.GenericObjectEditor
+
+# Mutation
+weka.classifiers.rules.hider.operator.mutation.Mutation=weka.gui.GenericObjectEditor
+
+# Selection
+weka.classifiers.rules.hider.operator.selection.Selection=weka.gui.GenericObjectEditor
+
+# fitness
+weka.classifiers.rules.hider.evaluation.Fitness=weka.gui.GenericObjectEditor
+
+
+
+
+
+ # SubgroupDiscovery
+weka.subgroupDiscovery.SubgroupDiscovery=weka.gui.GenericObjectEditor
+weka.subgroupDiscovery.EDERSD=weka.gui.GenericObjectEditor
+
+# Crossover
+weka.subgroupDiscovery.edersd.operator.crossover.Crossover=weka.gui.GenericObjectEditor
+
+# Mutation
+weka.subgroupDiscovery.edersd.operator.mutation.Mutation=weka.gui.GenericObjectEditor
+
+# Selection
+weka.subgroupDiscovery.edersd.operator.selection.Selection=weka.gui.GenericObjectEditor
+
+# fitness
+weka.subgroupDiscovery.edersd.evaluation.Fitness=weka.gui.GenericObjectEditor

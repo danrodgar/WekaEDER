@@ -147,9 +147,12 @@ public class ExplorerDefaults implements Serializable {
     String tabs;
 
     // read and split on comma
-    tabs = get(
-      "Tabs",
-      "weka.gui.explorer.ClassifierPanel,weka.gui.explorer.ClustererPanel,weka.gui.explorer.AssociationsPanel,weka.gui.explorer.AttributeSelectionPanel,weka.gui.explorer.VisualizePanel");
+    tabs   = get("Tabs", "weka.gui.explorer.ClassifierPanel," +
+    		"weka.gui.explorer.ClustererPanel,weka.gui.explorer.AssociationsPanel," +
+    		"weka.gui.explorer.AttributeSelectionPanel," +
+    		"weka.gui.explorer.VisualizePanel, " +
+    		"weka.gui.explorer.SubgroupDiscoveryPanel");
+    
     result = tabs.split(",");
 
     return result;
@@ -189,6 +192,24 @@ public class ExplorerDefaults implements Serializable {
    */
   public static Object getFilter() {
     return getObject("Filter", "", weka.filters.Filter.class);
+  }
+  
+  /**
+   * returns the default subgroup discovery algorithm (fully configured) for the subgroup discovery panel.
+   * 
+   * @return		the default subgroup discovery algorithm, EDERSD by default
+   */
+  public static Object getSubgroupDiscovery() {
+    Object	result;
+    
+    result = getObject(
+		"SubgroupDiscovery", 
+		weka.subgroupDiscovery.EDERSD.class.getName(), 
+		weka.subgroupDiscovery.SubgroupDiscovery.class);
+    if (result == null)
+      result = new weka.subgroupDiscovery.EDERSD();
+    
+    return result;
   }
 
   /**
